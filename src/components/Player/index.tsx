@@ -7,7 +7,7 @@ import { useKeyboard } from "../../hooks/useKeyboard";
 export const Player: React.FC = () => {
   const { jump, moveBackward, moveForward, moveLeft, moveRight } =
     useKeyboard();
-  console.log("moveRight", moveRight);
+
   const { camera } = useThree();
   const [ref, api] = useSphere(() => ({
     mass: 1,

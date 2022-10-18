@@ -9,6 +9,9 @@ import { Player } from "./components/Player";
 import { FPV } from "./components/FPV";
 import { Cursor } from "./components/Cursor";
 import { Cubes } from "./components/Cubes";
+import { TextureSelector } from "./components/TextureSelector";
+
+import "./index.css";
 
 function App() {
   return (
@@ -24,7 +27,7 @@ function App() {
           <Ground />
         </Physics>
       </Canvas>
-
+      <TextureSelector />
       <Cursor />
     </>
   );

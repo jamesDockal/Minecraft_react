@@ -6,8 +6,6 @@ export const useStore = create((set) => ({
   cubes: [],
   addCube: (x, y, z) => {
     set((prev) => {
-      console.log("prev", prev);
-
       return {
         cubes: [
           ...prev.cubes,
@@ -20,8 +18,19 @@ export const useStore = create((set) => ({
       };
     });
   },
-  removeCube: () => {},
-  setTexture: () => {},
+  removeCube: (x, y, z) => {
+    set((prev) => ({
+      cubes: prev.cubes.filter((cube) => {
+        const [X, Y, Z] = cube.pos;
+        return x !== X || y !== Y || z !== Z;
+      }),
+    }));
+  },
+  setTexture: (texture: string) => {
+    set(() => ({
+      texture,
+    }));
+  },
   saveWorld: () => {},
   resetWorld: () => {},
 }));

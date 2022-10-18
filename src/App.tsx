@@ -12,8 +12,12 @@ import { Cubes } from "./components/Cubes";
 import { TextureSelector } from "./components/TextureSelector";
 
 import "./index.css";
+import { Menu } from "./components/Menu";
+import { useStore } from "./hooks/useStore";
 
 function App() {
+  const [cubes] = useStore((state) => [state.cubes]);
+
   return (
     <>
       <Canvas>
@@ -28,6 +32,7 @@ function App() {
         </Physics>
       </Canvas>
       <TextureSelector />
+      <Menu />
       <Cursor />
     </>
   );
